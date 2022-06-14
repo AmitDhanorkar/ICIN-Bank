@@ -1,0 +1,74 @@
+<section class="vh-100" style="background-color: #2A2A2A">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-15 col-lg-8 col-xl-6">
+        <img src="/assets/image/banner.jpg" class="figure-img img-fluid rounded" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 border border-secondary rounded">
+        <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;color: #eee;">Sign into your account</h5>
+          </div>
+          <!-- Username input -->
+          <div class="form-outline mb-4">
+            <input type="text" formControlName="username" class="form-control form-control-lg"
+              [ngClass]="{ 'is-invalid': submitted && fval.username.errors }" placeholder="Enter Username here" />
+            <label class="form-label" for="form3Example3" style="letter-spacing: 1px;color: #eee;">Username</label>
+            <div *ngIf="submitted && fval.username.errors" class="invalid-feedback">
+              <div *ngIf="fval.username.errors.required">Username is required</div>
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" formControlName="password" class="form-control form-control-lg"
+              [ngClass]="{ 'is-invalid': submitted && fval.password.errors }" placeholder="Enter password here" />
+            <label class="form-label" for="form3Example4" style="letter-spacing: 1px;color: #eee;">Password</label>
+            <div *ngIf="submitted && fval.password.errors" class="invalid-feedback">
+              <div *ngIf="fval.password.errors.required">Please enter a Password</div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button [disabled]="loading" class="btn btn-primary btn-lg">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Login
+            </button>
+            <p class="small fw-bold mt-2 pt-1 mb-0" style="color: #eee;">Don't have an account? <a routerLink="/register"
+                class="link-danger">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div>
+    <!-- Copyright -->
+    <div style="color: #eee; text-align: center;">
+      Copyright © 2022. All rights reserved.
+    </div>
+    <!-- Copyright -->
+  </div>
+ 
+</section>
+<style>
+  .divider:after,
+  .divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+  }
+
+  .h-custom {
+    height: calc(100% - 73px);
+  }
+
+  @media (max-width: 450px) {
+    .h-custom {
+      height: 100%;
+    }
+  }
+</style>
