@@ -46,9 +46,8 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Total Balance</h5>
-            <p class="card-text">{{savingBalanceLocal}}</p>
-            <p class="card-text">{{savingAcc}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere <i class="bi bi-arrow-right-circle"></i> </a>
+            <p class="card-text">Rs. {{savingBalanceLocal}}</p>
+            <p class="card-text">A/C : {{savingAcc}}</p>
           </div>
         </div>
       </div>
@@ -56,11 +55,14 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Savings</h5>
-            <p class="card-text">{{savingBalanceLocal}}</p>
-            <p class="card-text">{{savingAcc}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere <i class="bi bi-arrow-right-circle"></i> </a>
+            <p class="card-text">Rs. {{savingBalanceLocal}}</p>
+            <p class="card-text">A/C : {{savingAcc}}</p>
           </div>
         </div>
+      </div>
+      <div class="mt-2 col-sm-12">
+        <a href="#" routerLink="/transactionHistory" class="btn btn-primary" role="button">Deposite</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" routerLink="/transferHistory" class="btn btn-primary" role="button">Withdraw</a>
       </div>
     </div>
   </div>
